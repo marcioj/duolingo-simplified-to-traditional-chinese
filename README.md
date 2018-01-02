@@ -49,6 +49,6 @@ npm start
 * [Node](https://nodejs.org/en/) - NodeJS
 
 ## Browser dependencies and MutationObserver
-This extension relies on a [DOM Level 4](https://www.w3.org/TR/dom/) addition to the Node functionaity of Javascript called [MutationObserver](https://www.w3.org/TR/dom/#interface-mutationobserver). Officially DOM 4 is still a way from being finished but MutationObservers have been implemented by every major browser.
+This extension relies on a [DOM Level 4](https://www.w3.org/TR/dom/) addition to the Node API called [MutationObserver](https://www.w3.org/TR/dom/#interface-mutationobserver). Officially DOM 4 is still a way from being finished but MutationObservers have been implemented by every major browser.
 
 This project wouldn't have been possible without MutationObserver. MutationObserver allows you to observe for changes within a chosen section of your DOM tree, this was possible with MutationEvents which were introduced around 10 years ago but they slowed down browser performance by up to 700% as well as support being extremely fragmented.
