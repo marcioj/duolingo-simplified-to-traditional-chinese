@@ -4,7 +4,7 @@ import { Cache } from './cache.js';
 export const mutationObserver = new MutationObserver(function(mutations){
 
     if(Duolingo.isLearningChinese() == false){
-      return;
+      return false;
     }
 
     for (let i=0; i < mutations.length; i++){
@@ -15,6 +15,7 @@ export const mutationObserver = new MutationObserver(function(mutations){
           if(nodeSting.match(/[\u3400-\u9FBF]/)){
 
             let difference = nodeSting.split('').filter(x => asciiStringArray.indexOf(x) == -1);
+
             if(difference.length == 0 ){
              return;
             }
@@ -25,9 +26,9 @@ export const mutationObserver = new MutationObserver(function(mutations){
                 }
             })
             chineseCharacters.forEach((character) => {
-                if(localStorage.getItem(character) !== null){
-                    if(localStorage.getItem(character)!=undefined){
-                      Duolingo.insertCharacter(character,localStorage.getItem(character));
+                if (localStorage.getItem(character) !== null){
+                    if (localStorage.getItem(character) != undefined){
+                      Duolingo.insertCharacter(character, localStorage.getItem(character));
                     }
                     return null;
                 }
@@ -39,9 +40,9 @@ export const mutationObserver = new MutationObserver(function(mutations){
                     return;
                   }
                   if(data.currentTarget.responseText){
-                      Cache.insertCharacter(character,data.currentTarget.responseText)
+                      Cache.insertCharacter(character, data.currentTarget.responseText)
                   }
-                  Duolingo.insertCharacter(element,character,data.currentTarget.responseText)
+                  Duolingo.insertCharacter(element,character, data.currentTarget.responseText)
                 }
                 if(navigator.onLine){
                   let oReq = new XMLHttpRequest();
@@ -51,6 +52,6 @@ export const mutationObserver = new MutationObserver(function(mutations){
               }
           });
         }
-    }
+      }
     }
   });

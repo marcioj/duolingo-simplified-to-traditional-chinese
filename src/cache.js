@@ -5,7 +5,7 @@ export class Cache{
      localStorage.setItem(simplifiedCharacter, realCharacter);
    }
   static updateLocalStorage(){
-    if(localStorage.getItem('version') == null || localStorage.getItem('version') < charactersVersion){
+    if (localStorage.getItem('version') == null || localStorage.getItem('version') < charactersVersion){
       localStorage.clear();
       localStorage.setItem('version', charactersVersion);
 

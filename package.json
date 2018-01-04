@@ -10,6 +10,8 @@
   "author": "Robin Card",
   "license": "ISC",
   "devDependencies": {
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
     "uglifyjs-webpack-plugin": "^1.1.5",
     "webpack": "^3.10.0"
   },

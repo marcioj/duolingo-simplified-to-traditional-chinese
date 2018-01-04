@@ -7,12 +7,14 @@
   "content_scripts": [
    {
      "matches": ["http://www.duolingo.com/*","https://www.duolingo.com/*"],
-     "js": ["heart.min.js"]
+     "js": ["heart.min.js"],
+      "css": [ "heart.css" ]
    }
  ],
 
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
   },
   "icons": {
     "128": "icon.png" },
