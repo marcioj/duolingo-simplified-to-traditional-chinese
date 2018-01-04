@@ -1,0 +1,45 @@
+.meaning{
+    background:#fff;
+    color:#3c3c3c;
+    display:none;
+}
+[data-test="challenge-header"] + span > div{
+    position: relative;
+}
+
+[data-test="challenge-header"] + span > div > div{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+[data-test="challenge-header"] + span > div > div:hover > div:first-of-type{
+  font-size: 60px!important;
+  height: 70px;
+  margin-bottom: 10px;
+}
+[data-test="challenge-header"] + span > div > div > div:first-of-type  > span{
+
+}
+
+
+[data-test="challenge-header"] + span > div > div:hover .meaning{
+  width:100%;
+  margin-top: 10px;
+  display:block;
+
+}
+
+[data-test="challenge-header"] + span > div > div .type{
+  color: #999;
+  font-style: italic;
+  margin-top:0px;
+  font-size: 12px;
+  display:none;
+}
+
+[data-test="challenge-header"] + span > div > div:hover .type{
+  color: #999;
+  font-style: italic;
+  display:block;
+}

@@ -38,39 +38,39 @@ export const characters = `本|本
 鱼|魚|Fish|noun
 喝|喝|Drink|verb
 饭|飯|Rice|noun
-面|面
-吃|吃
-水|水
+面|面|Noodles|noun
+吃|吃|Eat|verb
+水|水|Water|noun
 茶|茶|Tea|noun
 魚|魚|Fish|noun
-不|不
+不|不|No/Not|Determiner/Adverb
 飯|飯|Rice|noun
-么|麼|Interrogative sentence|Suffix
-七|七|Seven|Number
-呢|呢|Interrogative sentence|Suffix
-麼|麼|Interrogative sentence|Suffix
+么|麼|Interrogative sentence|suffix
+七|七|Seven|number
+呢|呢|Interrogative particle|suffix
+麼|麼|Interrogative particle|suffix
 名|名|Name|noun
 王|王|Wang|name
 见|見|See|verb
-見|見|See|verb
-她|她
-们|們
-是|是
-吗|嗎
+見|見|See|Verb
+她|她|She/Her|pronoun
+们|們|Plural|suffix|Turns woman into women 我們 or man into men 男們
+是|是|Be|verb
+吗|嗎|Interrogative particle|suffix
 生|生
 师|師
 它|它
-們|們
+們|們|Plural|suffix|Turns woman into women 我們 or man into men 男們
 老|老
 医|醫
 嗎|嗎
 師|師
-醫|醫
+醫|醫|Doctor|Verb
 起司|起司
 脏|臟
 undefined|undefined
-轻|輕
-麵|麵
+轻|輕|Light/Small|adjective
+麵|麵|Noodles|noun
 节|節
 国|國
 法|法
@@ -114,7 +114,7 @@ undefined|undefined
 理|理
 课|課
 锅|鍋
-小|小
+小|小|Small|adjective
 个|個
 有|有
 鍋|鍋
@@ -144,11 +144,11 @@ undefined|undefined
 去|去
 来|來
 北|北
-了|了
+了|了|Indicates something is complete or finished|Adverb
 來|來
 信|信
 应|應
-心|心
+心|心|Heart|noun
 该|該
 該|該
 應|應
@@ -196,11 +196,11 @@ undefined|undefined
 萊|萊
 且|且
 而|而
-妳|妳
+妳|妳|You(Female)|pronoun
 米|米
-期|期
+期|期|Meet|verb
 星|星
-日|日
+日|日|Sun/Day|noun
 周|週
 週|週
 英|英
@@ -257,13 +257,13 @@ undefined|undefined
 規|規
 着|著
 章|章
-文|文
-歴|歴
+文|文|Language|noun
+歴|歴|Experience|verb
 代|代
-索|索
+索|索|Search|verb
 検|検
 結|結
-果|果
+果|果|Fruit|noun
 入|入
 先|先
 内|內
@@ -277,7 +277,7 @@ undefined|undefined
 護|護
 保|保
 確|確
-用|用
+用|用|Use|Verb
 送|送
 受|受
 必|必
@@ -289,9 +289,9 @@ undefined|undefined
 著|著
 內|內
 化|化
-強|強
-記|記
-憶|憶
+強|強|Strong|adjective
+記|記|Remember|verb
+憶|憶|Memory|noun
 復|復
 校|校
 外|外
@@ -318,24 +318,24 @@ undefined|undefined
 手|手
 干|幹
 报|報
-机|機
-电|電
-纸|紙
+机|機|Machine|noun
+电|電|Electricity|noun
+纸|紙|Paper|noun
 闻|聞
 体|體
 育|育
 目|目
-哪|哪
+哪|哪|Which/Where|Interrogative particle
 里|裡
-班|班
+班|班|Class|noun
 汉|漢
 哥|哥
-语|語
-視|視
-網|網
-幹|幹
-機|機
-電|電
+语|語|Language|noun
+視|視|Visual|noun
+網|網|Network|noun
+幹|幹|Do|verb
+機|機|Machine|noun
+電|電|Electricity|noun
 紙|紙
 聞|聞
 體|體
@@ -347,22 +347,22 @@ undefined|undefined
 走|走
 靠|靠
 到|到
-近|近
-迟|遲
-怎|怎
-车|車
-从|從
-店|店
+近|近|Near|adjective
+迟|遲|Late|adjective
+怎|怎|How|interrogative
+车|車|Car|noun
+从|從|From|preposition
+店|店|Shop|Noun
 港|港
-开|開
-飞|飛
+开|開|Open|Verb
+飞|飛|Fly|Verb
 敦|敦
 让|讓
 非|非
 伦|倫
 场|場
-停|停
-离|離
+停|停|Stop|verb
+离|離|Leave|verb
 香|香
 太|太
 常|常
@@ -390,7 +390,7 @@ undefined|undefined
 卖|賣
 黃|黃
 子|子
-紫|紫
+紫|紫|Purple|noun
 帽|帽
 会|會
 今|今
@@ -421,7 +421,7 @@ undefined|undefined
 又|又
 写|寫
 台|台
-寫|寫
+寫|寫|Write|verb
 牙|牙
 拍|拍
 睛|睛
