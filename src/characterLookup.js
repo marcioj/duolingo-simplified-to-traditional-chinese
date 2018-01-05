@@ -3,9 +3,9 @@ export class CharacterLookup{
       constructor(){
         this.dictionary={};
         for(let x in characters){
-            let [simplified, traditional, meaning, type] = characters[x].split('|');
-            this.dictionary[simplified] = {meaning: meaning, type:type};
-            this.dictionary[traditional]  = {meaning:meaning, type: type };
+            let [simplified, traditional, meaning, type, explaination] = characters[x].split('|');
+            this.dictionary[simplified] = {meaning: meaning, type:type, explaination: explaination};
+            this.dictionary[traditional]  = {meaning:meaning, type: type, explaination : explaination};
         }
       }
 

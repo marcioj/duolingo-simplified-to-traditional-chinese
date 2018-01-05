@@ -1,5 +1,8 @@
 import { Duolingo } from './duolingo.js';
 import { Cache } from './cache.js';
+import { CharacterLookup } from './characterLookup.js'
+
+let characterLookup = new CharacterLookup();
 
 export const mutationObserver = new MutationObserver(function(mutations){
 
@@ -20,11 +23,35 @@ export const mutationObserver = new MutationObserver(function(mutations){
              return;
             }
             const chineseCharacters = [];
+            const compoundChineseCharacters = [];
+            let lastCharacterChinese = false;
+            let lastCharacter = '';
             difference.forEach(character => {
+
                 if( character > "\u3400" && character < "\u9FBF"){
                   chineseCharacters.push(character)
+                  lastCharacterChinese = true;
+
+                  if(lastCharacter != '' && lastCharacterChinese == true){
+                      compoundChineseCharacters.push(lastCharacter + character );
+                  }
+                  lastCharacter = character;
+
+                }else{
+                  lastCharacterChinese = false;
+                  lastCharacter='';
                 }
+
             })
+
+            compoundChineseCharacters.forEach(compoundCharacter=>{
+                  const result = characterLookup.getMeaning(compoundCharacter);
+                  if(result){
+                    chineseCharacters.unshift(compoundCharacter);
+                  }
+            });
+
+          
             chineseCharacters.forEach((character) => {
                 if (localStorage.getItem(character) !== null){
                     if (localStorage.getItem(character) != undefined){
@@ -40,9 +67,9 @@ export const mutationObserver = new MutationObserver(function(mutations){
                     return;
                   }
                   if(data.currentTarget.responseText){
-                      Cache.insertCharacter(character, data.currentTarget.responseText)
+                      Cache.setCharacter(character, data.currentTarget.responseText)
                   }
-                  Duolingo.insertCharacter(element,character, data.currentTarget.responseText)
+                //  Duolingo.insertCharacter(character, data.currentTarget.responseText)
                 }
                 if(navigator.onLine){
                   let oReq = new XMLHttpRequest();

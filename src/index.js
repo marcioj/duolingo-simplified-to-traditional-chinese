@@ -4,6 +4,7 @@ import { characters } from './characters.js';
 import { Duolingo } from './duolingo.js';
 
 Cache.updateLocalStorage();
+
 Duolingo.checkForChineseCharactersOnLoad();
 
 mutationObserver.observe(document, {

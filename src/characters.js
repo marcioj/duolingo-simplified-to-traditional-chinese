@@ -7,6 +7,7 @@ export const characters = `本|本
 塊|塊
 張|張
 華|華
+你好|你好|Hello|greeting|literally: 'you good'?
 高|高|High/Tall|adjective
 兴|興|Happy|adjective
 很|很|Very|adverb
@@ -16,8 +17,8 @@ export const characters = `本|本
 我|我|I|pronoun
 他|他|He|pronoun
 好|好|Good|adjective
-学|學|Learn|verb
-你|你|You|pronoun
+学|學|Understand/Learn|noun/verb|Forms a compound word 学生(student)
+你|你|You|pronoun|literally: 'you good'?
 興|興|Happy|adjective
 識|識|Knowledge|noun
 認|認|Recognise|verb
@@ -28,63 +29,63 @@ export const characters = `本|本
 百|百|100|number
 三|三|Three|number
 字|字|Word|noun
-再|再|Again|adverb
+再|再|Again|adverb|Forms a compound word 再見 (Goodbye, literally again see).
 二|二|Two|number
 一|一|One|number
 五|五|Five|number
-十|十|Ten|number
+十|十|Ten|number|Can be combined with other numbers to create multiples of ten 七十 (Seventy)
 六|六|Six|number
 叫|叫|Call|verb
 鱼|魚|Fish|noun
 喝|喝|Drink|verb
-饭|飯|Rice|noun
+饭|飯|Rice|noun|
 面|面|Noodles|noun
 吃|吃|Eat|verb
 水|水|Water|noun
 茶|茶|Tea|noun
 魚|魚|Fish|noun
 不|不|No/Not|Determiner/Adverb
-飯|飯|Rice|noun
-么|麼|Interrogative sentence|suffix
+飯|飯|Rice|noun|
+么|麼|Interrogative sentence|suffix|什么(What), 怎么 (How), 这么 (Like this), 多么 (how; what; so; such)
 七|七|Seven|number
 呢|呢|Interrogative particle|suffix
-麼|麼|Interrogative particle|suffix
+麼|麼|Interrogative particle|suffix|什么(What), 怎么 (How), 这么 (Like this), 多么 (how; what; so; such)
 名|名|Name|noun
 王|王|Wang|name
-见|見|See|verb
-見|見|See|Verb
+见|見|See|verb|Forms a compound word 再見 (Goodbye, literally again see).
+見|見|See|Verb|Forms a compound word 再見 (Goodbye, literally again see).
 她|她|She/Her|pronoun
-们|們|Plural|suffix|Turns woman into women 我們 or man into men 男們
+们|們|Plural|suffix|Turns 她 (she) into them/they plural (females) 她们 or 他 (he) into them/they 他們 (males)
 是|是|Be|verb
-吗|嗎|Interrogative particle|suffix
-生|生
-师|師
+吗|嗎|Interrogative particle|suffix|At the end of a sentence it creates a yes/no question.
+生|生|Pupil|noun|forms a compound word 學生(student)|This word has a lot of meanings; live, grow, pupil, disciple.
+师|師|Expert|noun|orms a compound word 老師 (teacher)
 它|它
-們|們|Plural|suffix|Turns woman into women 我們 or man into men 男們
-老|老
-医|醫
-嗎|嗎
-師|師
-醫|醫|Doctor|Verb
+們|們|Plural|suffix|Turns 她 (she) into them/they plural (females) 她们 or 他 (he) into them/they 他們 (males)
+老|老|Experienced|noun/verb|forms a compound word 老師 (teacher)
+医|醫|Doctor/medicine|noun|forms a compound word 醫生  (doctor)|This word has a lot of meanings; live, grow, pupil, disciple.
+嗎|嗎|Interrogative particle|suffix|At the end of a sentence it creates a yes/no question.
+師|師|Expert|noun|forms a compound word 老師 (teacher)
+醫|醫|Doctor/medicine|noun|forms a compound word 醫醫生  (doctor)|This word has a lot of meanings; live, grow, pupil, disciple.
 起司|起司
 脏|臟
 undefined|undefined
 轻|輕|Light/Small|adjective
 麵|麵|Noodles|noun
 节|節
-国|國
+国|國|Country|noun
 法|法
 力|力
 后|後
 利|利
 想|想
-國|國
+國|國|Country|noun
 後|後
 努|努
 季|季
 还|還
 最|最
-大|大
+大|大|Large|Adjective|Can also be used in a compound to form the word 加拿大 (Canada)
 白|白
 酒|酒
 望|望
@@ -96,10 +97,10 @@ undefined|undefined
 點|點
 儿|兒
 兒|兒
-的|的
+的|的|his/her/my/your|posessive suffix|Used after a word it indicates the belonging of; for example combining 我 (I) making a 我的(my) or 他 (he) making 他的(his)
 八|八|Eight|number
 次|次
-元|元|Yen|Noun
+元|元|Yen|Noun|Currency of Mainland China 🇨🇳
 四|四|Four|number
 张|張
 明|明
@@ -107,7 +108,7 @@ undefined|undefined
 华|華
 什|甚|What|interrogative adverb
 其|其
-人|人
+人|人|Person|noun|You will almost always see this in a compound word like 中国人 (Chinese person; literally China person)
 天|天
 地|地
 火|火
@@ -128,7 +129,7 @@ undefined|undefined
 圖|圖
 戴|戴
 甜|甜
-美|美
+美|美|Beautiful/America|Verb/Noun|This can form a compound word with 国 (country) to make 美国 (America) or 美国人 (American person; literally America man)
 术|術
 爷|爺
 術|術
@@ -192,7 +193,7 @@ undefined|undefined
 揚|揚
 昂|昂
 納|納
-多|多
+多|多|Many|Compound: Determiner, pronoun and adjective|Can form compound question endings such as 多少 (what is?)
 萊|萊
 且|且
 而|而
@@ -203,7 +204,7 @@ undefined|undefined
 日|日|Sun/Day|noun
 周|週
 週|週
-英|英
+英|英|Excellent/British|noun/adjective|This can form a compound word with 国 (country) to make 英国 (Britain) or 英国人 (British person; literally Britain country man)
 語|語
 動|動
 詞|詞
@@ -232,7 +233,7 @@ undefined|undefined
 數|數
 屬|屬
 板|板
-中|中
+中|中|Middle|adjective|You will mostly see this character as a compound with 国 (country) making 中国 (China)
 編|編
 集|集
 掲|掲
@@ -319,7 +320,7 @@ undefined|undefined
 干|幹
 报|報
 机|機|Machine|noun
-电|電|Electricity|noun
+电|電|Electricity|noun|Can form a compound word to form 电话 (telephone)
 纸|紙|Paper|noun
 闻|聞
 体|體
@@ -335,7 +336,7 @@ undefined|undefined
 網|網|Network|noun
 幹|幹|Do|verb
 機|機|Machine|noun
-電|電|Electricity|noun
+電|電|Electricity|noun|Can form a compound word to form 电话 (telephone)
 紙|紙
 聞|聞
 體|體
@@ -469,7 +470,7 @@ undefined|undefined
 遊|遊
 爸|爸
 住|住
-拿|拿
+拿|拿|take|verb|Can also be used in a compound to form the word 加拿大 (Canada)
 约|約
 湾|灣
 灣|灣
@@ -477,7 +478,7 @@ undefined|undefined
 乹|乹
 乾|乾
 亁|亁
-都|都
+都|都|All/Both|Predeterminer, determiner and pronoun
 观|觀
 觀|觀
 末|末
@@ -527,13 +528,13 @@ undefined|undefined
 進|進
 別|別
 輛|輛
-号|號
-號|號
+号|號|Name|noun|Can form compounds such as 码号 (names of numbers)
+號|號|Name|noun|Can form compounds such as 码号 (names of numbers)
 关|關
 關|關
-码|碼
+码|碼|Number/Numeric|noun/verb|Can form compounds such as 码号 (names of numbers) and 电话码 (telephone number)
 少|少
-碼|碼
+碼|碼|Number/Numeric|noun/verb|Can form compounds such as 码号 (names of numbers) and 电话码 (telephone number)
 玩|玩
 戏|戲
 戲|戲
@@ -555,11 +556,11 @@ undefined|undefined
 套|套
 眼|眼
 疆|疆
-加|加
+加|加|Add|noun|Can also be used in a compound to form the word 加拿大 (Canada)
 坡|坡
-对|對
+对|對|Correct|adjective
 决|決
-對|對
+對|對|Correct|adjective
 绿|綠
 姐|姐
 发|發
@@ -595,11 +596,11 @@ undefined|undefined
 准|準
 科|科
 备|備
-话|話
+话|話|Speak/Language|verb/noun|Can form a compound word to form 电话 (telephone)
 筆|筆
 準|準
 備|備
-話|話
+話|話|Speak/Language|verb/noun|Can form a compound word to form 电话 (telephone)
 旁|旁
 快|快
 希|希
@@ -620,7 +621,7 @@ undefined|undefined
 忙|忙
 样|樣
 樣|樣
-甚|甚
+甚|甚|What|interrogative adverb
 蛋|蛋
 碗|碗
 嚿|嚿
@@ -756,4 +757,4 @@ undefined|undefined
 萬|萬
 錢|錢`.split('\n');
 
-export const charactersVersion = 101;
+export const charactersVersion = 238;

@@ -1,6 +1,33 @@
 import { characters } from './characters.js';
 import { CharacterLookup } from './characterLookup.js'
 let characterLookup = new CharacterLookup();
+
+const configuration = {};
+
+function settingsChanged(){
+    if(configuration['meanings'] == true){
+      document.body.classList.add('show-meanings');
+    }else{
+      document.body.classList.remove('show-meanings');
+    }
+}
+
+chrome.storage.sync.get('traditional',function(result){
+  configuration['traditional']=result.traditional;
+  settingsChanged();
+});
+
+
+chrome.storage.sync.get('meanings',function(result){
+  configuration['meanings']=result.meanings;
+  settingsChanged();
+});
+
+ chrome.storage.onChanged.addListener(function(changes){
+   configuration[Object.keys(changes)[0]]=changes[Object.keys(changes)[0]].newValue;
+   settingsChanged();
+ });
+
 export class Duolingo{
 
    static isLearningChinese(){
@@ -17,8 +44,11 @@ export class Duolingo{
             if(singleChalengeElement.childElementCount == 2){
                   const meaning = characterLookup.getMeaning(character);
                   if( meaning !== undefined){
-                      let div = document.createElement('div')
-                      div.innerHTML=`<div class="meaning"><div class="english">${meaning.meaning}</div><div class="type">${meaning.type}</div></div>`;
+                      const div = document.createElement('div');
+                      const explaination = meaning.explaination == undefined ? " " :  meaning.explaination ;
+                      const type = meaning.type == undefined ? " " :  meaning.type ;
+                      const englishTranslation = meaning.meaning == undefined ? " " :  meaning.meaning ;
+                      div.innerHTML=`<div class="meaning"><div class="english">${englishTranslation}</div><div class="type">${type}</div><div class="explaination">${explaination}</div></div>`;
                       singleChalengeElement.appendChild(div)
                       console.log('inserted')
                   }
@@ -26,7 +56,10 @@ export class Duolingo{
           }else{
 
           }
-    }, 400);
+    }, 500);
+    if(configuration['traditional'] == false){
+      return;
+    }
     if(maoCharacacter == realCharacter){
       return;
     }
@@ -44,16 +77,22 @@ export class Duolingo{
   }
 
   static checkForChineseCharactersOnLoad(){
+
     if(Duolingo.isLearningChinese() == false){
       return;
     }
+    setTimeout(function(){
     characters.forEach((x, y) =>{
       let [simplified, traditional] = x.split('|');
       setTimeout(function(){
-          Duolingo.insertCharacter(simplified,traditional);
-      },1);
-    });
 
-    console.log('initial load');
+          const element = Sizzle(`:contains('${simplified}')`);
+          if (element.length != 0){
+                Duolingo.insertCharacter(simplified,traditional);
+          }
+
+      },10);
+    });
+  }, 1000);
   }
 }
