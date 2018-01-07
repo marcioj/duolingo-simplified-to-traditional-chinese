@@ -10,6 +10,7 @@ export class CharacterLookup{
       }
 
       getMeaning(character){
+      
           return this.dictionary[character];
       }
 }

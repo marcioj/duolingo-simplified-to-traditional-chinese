@@ -51,7 +51,7 @@ export const mutationObserver = new MutationObserver(function(mutations){
                   }
             });
 
-          
+
             chineseCharacters.forEach((character) => {
                 if (localStorage.getItem(character) !== null){
                     if (localStorage.getItem(character) != undefined){

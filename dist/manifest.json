@@ -4,7 +4,7 @@
   "name": "Duolingo Chinese-Word definitions/traditional",
   "description": "This extension allows users to learn Traditional or Simplified Chinese as well as see useful descriptions of characters..",
   "short_name": "The only Chinese Duolingo extention you'll ever need",
-  "version": "0.81",
+  "version": "0.82",
   "content_scripts": [
    {
      "matches": ["http://www.duolingo.com/*","https://www.duolingo.com/*"],

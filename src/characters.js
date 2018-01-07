@@ -7,6 +7,20 @@ export const characters = `本|本
 塊|塊
 張|張
 華|華
+家人|家人|Family|noun
+不客气|不客氣|You are welcome|expression
+不客氣|不客氣|You are welcome|expression
+謝謝|謝謝|Thank you|expression
+谢谢|謝謝|Thank you|expression
+谢|謝|Thank|verb|Can be doubled to say 谢谢 (Thank you)
+謝|謝|Thank|verb|Can be doubled to say 謝謝 (Thank you)
+伦敦|倫敦|London|City
+倫敦|倫敦|London|City
+台灣|台灣|Taiwan|Country
+台湾|台灣|Taiwan|Country
+哪儿|哪兒|Where|interrogative adverb
+纽约|紐約|New York|City
+香港|香港|Hong Kong|City
 你好|你好|Hello|greeting|literally: 'you good'?
 高|高|High/Tall|adjective
 兴|興|Happy|adjective
@@ -60,7 +74,6 @@ export const characters = `本|本
 吗|嗎|Interrogative particle|suffix|At the end of a sentence it creates a yes/no question.
 生|生|Pupil|noun|forms a compound word 學生(student)|This word has a lot of meanings; live, grow, pupil, disciple.
 师|師|Expert|noun|orms a compound word 老師 (teacher)
-它|它
 們|們|Plural|suffix|Turns 她 (she) into them/they plural (females) 她们 or 他 (he) into them/they 他們 (males)
 老|老|Experienced|noun/verb|forms a compound word 老師 (teacher)
 医|醫|Doctor/medicine|noun|forms a compound word 醫生  (doctor)|This word has a lot of meanings; live, grow, pupil, disciple.
@@ -68,6 +81,8 @@ export const characters = `本|本
 師|師|Expert|noun|forms a compound word 老師 (teacher)
 醫|醫|Doctor/medicine|noun|forms a compound word 醫醫生  (doctor)|This word has a lot of meanings; live, grow, pupil, disciple.
 起司|起司
+媽|媽|Mum|particle noun|doubles to make 媽媽(Mum)
+妈|媽|Mum|particle noun|doubles to make 妈(Mum)
 脏|臟
 undefined|undefined
 轻|輕|Light/Small|adjective
@@ -95,8 +110,8 @@ undefined|undefined
 還|還
 点|點
 點|點
-儿|兒
-兒|兒
+儿|兒|Child|noun
+兒|兒|Child|noun
 的|的|his/her/my/your|posessive suffix|Used after a word it indicates the belonging of; for example combining 我 (I) making a 我的(my) or 他 (he) making 他的(his)
 八|八|Eight|number
 次|次
@@ -108,8 +123,8 @@ undefined|undefined
 华|華
 什|甚|What|interrogative adverb
 其|其
-人|人|Person|noun|You will almost always see this in a compound word like 中国人 (Chinese person; literally China person)
-天|天
+人|人|Person|noun|You will almost always see this in a compound word like 中国人 (Chinese person; literally China person).
+天|天|Day|noun|Can be combined with 今 (now) to make the compound word 今天(today).
 地|地
 火|火
 理|理
@@ -139,13 +154,13 @@ undefined|undefined
 油|油
 条|條
 條|條
-京|京
+京|京|Commonly used with 北 (North) to make 北京(Beijing. Literally: North capital)
 秋|秋
 年|年
 去|去
 来|來
-北|北
-了|了|Indicates something is complete or finished|Adverb
+北|北|North|noun|Commonly used with 京 (Capital) to make 北京(Beijing. Literally: North capital)
+了|了|Adverb|Indicates something is complete or finished
 來|來
 信|信
 应|應
@@ -154,7 +169,7 @@ undefined|undefined
 該|該
 應|應
 赛|賽
-在|在
+在|在|In|Preposition
 每|每
 要|要
 比|比
@@ -212,7 +227,7 @@ undefined|undefined
 物|物
 間|間
 付|付
-家|家
+家|家|Family|noun
 族|族
 前|前
 副|副
@@ -262,7 +277,7 @@ undefined|undefined
 歴|歴|Experience|verb
 代|代
 索|索|Search|verb
-検|検
+検|檢
 結|結
 果|果|Fruit|noun
 入|入
@@ -272,7 +287,7 @@ undefined|undefined
 収|収
 概|概
 求|求
-約|約
+約|約|noun|Commonly used with 约 to form 纽约(New York)
 情|情
 報|報
 護|護
@@ -314,7 +329,7 @@ undefined|undefined
 通|通
 影|影
 视|視
-上|上
+上|上|up; on; on top|preposition|Can be used with the word 早 to make 早上 (morning). Literally: "upon (the time when it is) early".
 网|網
 手|手
 干|幹
@@ -354,17 +369,17 @@ undefined|undefined
 车|車|Car|noun
 从|從|From|preposition
 店|店|Shop|Noun
-港|港
+港|港|Harbour|Noun|Commonly used with 香 (Fragrant) to form 香港 (Hong Kong. Literally: fragrant harbour)
 开|開|Open|Verb
 飞|飛|Fly|Verb
-敦|敦
+敦|敦|Honest|adjective|Commonly used with 伦 to form 伦敦 (London)
 让|讓
 非|非
-伦|倫
+伦|倫|relationship|noun|Commonly used with 敦 to form 伦敦 (London)
 场|場
 停|停|Stop|verb
 离|離|Leave|verb
-香|香
+香|香|Fragrant|adjective|Commonly used with 港 (Harbour) to form 香港 (Hong Kong. Literally: fragrant harbour)
 太|太
 常|常
 遠|遠
@@ -373,7 +388,7 @@ undefined|undefined
 車|車
 從|從
 開|開
-倫|倫
+倫|倫|relationship|noun|Commonly used with 敦 to form 伦敦 (London)
 讓|讓
 離|離
 但|但
@@ -394,7 +409,7 @@ undefined|undefined
 紫|紫|Purple|noun
 帽|帽
 会|會
-今|今
+今|今|Now|Adverb|Can be combined with 天 (day) to make the compound word 今天(today)
 饱|飽
 長|長
 雖|雖
@@ -411,8 +426,8 @@ undefined|undefined
 請|請
 买|買
 買|買
-这|這
-這|這
+这|這|This|pronoun
+這|這|This|pronoun
 贵|貴
 貴|貴
 汽|汽
@@ -421,7 +436,7 @@ undefined|undefined
 邊|邊
 又|又
 写|寫
-台|台
+台|台|Station|noun|Commonly used with 湾 to form 台湾(Taiwan)
 寫|寫|Write|verb
 牙|牙
 拍|拍
@@ -441,7 +456,7 @@ undefined|undefined
 沒|沒
 辛|辛
 苦|苦
-謝|謝
+謝|謝|Thank|verb|Can be doubled to say 謝謝 (Thank you)
 幫|幫
 使|使
 键|鍵
@@ -453,13 +468,13 @@ undefined|undefined
 跳|跳
 舞|舞
 式|式
-爱|愛
-愛|愛
-谁|誰
+爱|愛|Love|noun
+爱|愛|Love|noun
+谁|誰|Who|pronoun
 像|像
-那|那
+那|那|That|pronoun
 些|些
-誰|誰
+誰|誰|Who|pronoun
 共|共
 女|女
 朋|朋
@@ -468,12 +483,12 @@ undefined|undefined
 漂|漂
 游|遊
 遊|遊
-爸|爸
-住|住
+爸|爸|Dad|particle noun|doubles to make 爸爸(Dad)
+住|住|live|verb
 拿|拿|take|verb|Can also be used in a compound to form the word 加拿大 (Canada)
-约|約
-湾|灣
-灣|灣
+约|約|approximately|adjective|Commonly used with 约 to form 纽约(New York)
+湾|灣|Bay|noun|Commonly used with 台 to form 台湾(Taiwan)
+灣|灣|Bay|noun|Commonly used with 台 to form 台灣(Taiwan)
 午|午
 乹|乹
 乾|乾
@@ -571,7 +586,7 @@ undefined|undefined
 饼|餅
 完|完
 转|轉
-谢|謝
+谢|謝|謝|Thank|verb|Can be doubled to say 谢谢 (Thank you)
 啊|啊
 包|包
 需|需
@@ -612,13 +627,13 @@ undefined|undefined
 和|和
 頭|頭
 始|始
-早|早
+早|早|Early|adjective|Can be used with the character 上 to form the compound word 早上 (morning)
 睡|睡
 床|床
 觉|覺
 覺|覺
 找|找
-忙|忙
+忙|忙|Busy|adjective
 样|樣
 樣|樣
 甚|甚|What|interrogative adverb
@@ -628,14 +643,14 @@ undefined|undefined
 炒|炒
 頓|頓
 柒|柒
-纽|紐
-紐|紐
+纽|紐|Button|noun|Commonly used with 约 to form 纽约(New York)
+紐|紐|Button|noun|Commonly used with 约 to form 纽约(New York)
 惇|惇
 枝|枝
-客|客
-气|氣
+客|客|Guest|noun|Commonly used with 气 to form 客气(polite) or 不客气(You're welcome, literally:  don't be so polite)
+气|氣|Air|noun|Commonly used with 客 to form 客气(polite) or 不客气(You're welcome, literally:  don't be so polite)
 系|系
-氣|氣
+氣|氣|Air|noun|Commonly used with 客 to form 客气(polite) or 不客气(You're welcome, literally:  don't be so polite)
 迎|迎
 博|博
 憾|憾
@@ -645,12 +660,10 @@ undefined|undefined
 繫|繫
 抱|抱
 歉|歉
-妈|媽
 弟|弟
 妹|妹
 两|兩
 弟|弟
-媽|媽
 兩|兩
 更|更
 旧|舊
@@ -757,4 +770,4 @@ undefined|undefined
 萬|萬
 錢|錢`.split('\n');
 
-export const charactersVersion = 238;
+export const charactersVersion = 303;

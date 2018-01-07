@@ -8,6 +8,7 @@ export class Cache{
 
     if (localStorage.getItem('version') == null || parseFloat(localStorage.getItem('version')) < charactersVersion){
       localStorage.clear();
+      console.log('clear cache');
       localStorage.setItem('version', charactersVersion);
       characters.forEach((x) => {
         let [simplified, traditional] = x.split('|');

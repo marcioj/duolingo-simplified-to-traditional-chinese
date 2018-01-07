@@ -50,7 +50,7 @@ export class Duolingo{
                       const englishTranslation = meaning.meaning == undefined ? " " :  meaning.meaning ;
                       div.innerHTML=`<div class="meaning"><div class="english">${englishTranslation}</div><div class="type">${type}</div><div class="explaination">${explaination}</div></div>`;
                       singleChalengeElement.appendChild(div)
-                      console.log('inserted')
+                      
                   }
             }
           }else{
