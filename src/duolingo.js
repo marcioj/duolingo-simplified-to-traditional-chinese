@@ -31,10 +31,9 @@ chrome.storage.sync.get('meanings',function(result){
 export class Duolingo{
 
    static isLearningChinese(){
-    if(location.pathname.indexOf("zs/") == -1){
-      return false;
-    }
-    return true;
+    const state = JSON.parse(localStorage.getItem('duo.state'));
+
+    return state.user.courseId.match(/ZH\-CN_EN/i) != null;
   }
   static insertCharacter(maoCharacacter, realCharacter){
     let character = realCharacter;
@@ -50,7 +49,7 @@ export class Duolingo{
                       const englishTranslation = meaning.meaning == undefined ? " " :  meaning.meaning ;
                       div.innerHTML=`<div class="meaning"><div class="english">${englishTranslation}</div><div class="type">${type}</div><div class="explaination">${explaination}</div></div>`;
                       singleChalengeElement.appendChild(div)
-                      
+
                   }
             }
           }else{
