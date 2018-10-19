@@ -9,7 +9,7 @@
   <title></title>
 
   <style>
-      body{
+    body{
         margin: 3px;
         padding:0px;
         font-family: Lato, sans-serif;
@@ -48,14 +48,6 @@
           border-radius: 50%;
           background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.1));
           position: relative;
-      }
-
-      .can-animate .toggle > div{
-        transition: 400ms all ease-out;
-      }
-
-      .can-animate .toggle {
-        transition: 400ms all ease-out;
       }
 
       label > input[type=checkbox]{
@@ -111,30 +103,6 @@
           display: none;
       }
 
-      .homepage-link{
-          flex-grow: 1;
-          margin-top:10px;
-          display: flex;
-          flex-direction: column-reverse;
-          padding-bottom: 5px;
-      }
-      .homepage-link a{
-        color: #417112;
-        background-color:#fff;
-        padding: 10px 5px;
-        border-radius: 20px;
-        background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.1));
-        text-align: center;
-        text-decoration: none;
-        font-size: 10px;
-        outline:none;
-      }
-      .homepage-link a:hover{
-          background-image:none;
-      }
-      .homepage-link a:active{
-        background-image: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,0.1));
-      }
       h1{
         text-align: center;
         font-size: 20px;
@@ -147,51 +115,27 @@
 
 <body>
   <div class="contents">
-      <h1>Duolingo 中文</h1>
-      <label class="traditional-or-simplified">
-        <div class="label">
-            Traditional
-        </div>
-          <input type="checkbox" value="1" id="setting-traditional">
-          <div class="toggle-slider">
-              <div class="toggle">
-                  <div class="off-text">
-                      <div class="chinese">爱</div>
-                      <div class="english">off</div>
-                  </div>
-                  <div class="on-text">
-                      <div class="chinese">愛</div>
-                      <div class="english">on</div>
-                  </div>
-              </div>
-          </div>
-      </label>
-      <label class="show-meanings">
-        <div class="label">
-            Show meanings
-        </div>
-        <input type="checkbox" value="1" id="setting-meanings">
-        <div class="toggle-slider">
-            <div class="toggle">
-              <div class="off-text">
-                  <div class="chinese">关</div>
-                  <div class="english">off</div>
-              </div>
-              <div class="on-text">
-                  <div class="chinese">開</div>
-                  <div class="english">on</div>
-              </div>
-            </div>
-        </div>
-      </label>
-      <div class="homepage-link">
-        <a href="https://www.duolingo.com/comment/25745006" target="_blank">
-          extension home page and discussion
-        </a>
+    <h1>Duolingo 中文</h1>
+    <label class="traditional-or-simplified">
+      <div class="label">
+        Traditional
       </div>
+      <input type="checkbox" value="1" id="setting-traditional">
+      <div class="toggle-slider">
+        <div class="toggle">
+          <div class="off-text">
+            <div class="chinese">爱</div>
+            <div class="english">off</div>
+          </div>
+          <div class="on-text">
+            <div class="chinese">愛</div>
+            <div class="english">on</div>
+          </div>
+        </div>
+      </div>
+    </label>
   </div>
-  <script src="popup.js">
-
+  <script src="js/popup.js" type="module">
   </script>
 </body>
 
