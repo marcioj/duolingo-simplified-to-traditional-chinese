@@ -104,7 +104,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"6OaI":[function(require,module,exports) {
+})({"characters.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -124,7 +124,7 @@ var characters = charactersNoDef.concat(charactersWithDef);
 exports.characters = characters;
 var charactersVersion = 303;
 exports.charactersVersion = charactersVersion;
-},{}],"Lqfu":[function(require,module,exports) {
+},{}],"cache.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -163,13 +163,13 @@ function () {
   }, {
     key: "updateLocalStorage",
     value: function updateLocalStorage() {
-      if (localStorage.getItem('version') == null || parseFloat(localStorage.getItem('version')) < _characters.charactersVersion) {
+      if (localStorage.getItem("version") == null || parseFloat(localStorage.getItem("version")) < _characters.charactersVersion) {
         localStorage.clear();
-        console.log('clear cache');
-        localStorage.setItem('version', _characters.charactersVersion);
+        console.log("clear cache");
+        localStorage.setItem("version", _characters.charactersVersion);
 
         _characters.characters.forEach(function (x) {
-          var _x$split = x.split('|'),
+          var _x$split = x.split("|"),
               _x$split2 = _slicedToArray(_x$split, 2),
               simplified = _x$split2[0],
               traditional = _x$split2[1];
@@ -184,15 +184,21 @@ function () {
 }();
 
 exports.Cache = Cache;
-},{"./characters.js":"6OaI"}],"CUbO":[function(require,module,exports) {
+},{"./characters.js":"characters.js"}],"Dictionary.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CharacterLookup = void 0;
+exports.default = void 0;
 
 var _characters = require("./characters.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -202,54 +208,51 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var parsedData;
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var parseDataIfNeeded = function parseDataIfNeeded() {
+  if (parsedData) return;
+  parsedData = Object.create(null);
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+  for (var char in _characters.characters) {
+    var _characters$char$spli = _characters.characters[char].split("|"),
+        _characters$char$spli2 = _slicedToArray(_characters$char$spli, 5),
+        simplified = _characters$char$spli2[0],
+        traditional = _characters$char$spli2[1],
+        meaning = _characters$char$spli2[2],
+        type = _characters$char$spli2[3],
+        explanation = _characters$char$spli2[4];
 
-var CharacterLookup =
+    parsedData[simplified] = {
+      traditional: traditional,
+      meaning: meaning,
+      type: type,
+      explanation: explanation
+    };
+  }
+};
+
+var Dictionary =
 /*#__PURE__*/
 function () {
-  function CharacterLookup() {
-    _classCallCheck(this, CharacterLookup);
+  function Dictionary() {
+    _classCallCheck(this, Dictionary);
 
-    this.dictionary = {};
-
-    for (var x in _characters.characters) {
-      var _characters$x$split = _characters.characters[x].split('|'),
-          _characters$x$split2 = _slicedToArray(_characters$x$split, 5),
-          simplified = _characters$x$split2[0],
-          traditional = _characters$x$split2[1],
-          meaning = _characters$x$split2[2],
-          type = _characters$x$split2[3],
-          explaination = _characters$x$split2[4];
-
-      this.dictionary[simplified] = {
-        meaning: meaning,
-        type: type,
-        explaination: explaination
-      };
-      this.dictionary[traditional] = {
-        meaning: meaning,
-        type: type,
-        explaination: explaination
-      };
-    }
+    parseDataIfNeeded();
   }
 
-  _createClass(CharacterLookup, [{
-    key: "getMeaning",
-    value: function getMeaning(character) {
-      return this.dictionary[character];
+  _createClass(Dictionary, [{
+    key: "translateToTraditional",
+    value: function translateToTraditional(simplified) {
+      return parsedData[simplified].traditional;
     }
   }]);
 
-  return CharacterLookup;
+  return Dictionary;
 }();
 
-exports.CharacterLookup = CharacterLookup;
-},{"./characters.js":"6OaI"}],"kOJT":[function(require,module,exports) {
+exports.default = Dictionary;
+},{"./characters.js":"characters.js"}],"../../node_modules/sizzle/dist/sizzle.js":[function(require,module,exports) {
 var define;
 /*!
  * Sizzle CSS Selector Engine v2.3.3
@@ -2524,7 +2527,7 @@ if ( typeof define === "function" && define.amd ) {
 
 })( window );
 
-},{}],"rAOA":[function(require,module,exports) {
+},{}],"duolingo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2534,7 +2537,7 @@ exports.Duolingo = void 0;
 
 var _characters = require("./characters.js");
 
-var _characterLookup = require("./characterLookup.js");
+var _Dictionary = _interopRequireDefault(require("./Dictionary"));
 
 var _sizzle = _interopRequireDefault(require("sizzle"));
 
@@ -2554,7 +2557,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var characterLookup = new _characterLookup.CharacterLookup();
+var characterLookup = new _Dictionary.default();
 var configuration = {};
 
 function settingsChanged() {
@@ -2593,8 +2596,8 @@ function () {
     }
   }, {
     key: "insertCharacter",
-    value: function insertCharacter(maoCharacacter, realCharacter) {
-      var character = realCharacter;
+    value: function insertCharacter(simplified, traditional) {
+      var character = traditional;
       setTimeout(function () {
         var singleChalengeElement = document.querySelector('[data-test="challenge-header"] + span > div > div');
 
@@ -2618,24 +2621,24 @@ function () {
         return;
       }
 
-      if (maoCharacacter == realCharacter) {
+      if (simplified == traditional) {
         return;
       }
 
-      if (maoCharacacter == undefined || maoCharacacter == "undefined") {
+      if (simplified == undefined || simplified == "undefined") {
         return;
       }
 
-      var element = (0, _sizzle.default)(":contains(".concat(maoCharacacter, ")")).slice(-1)[0];
+      var element = (0, _sizzle.default)(":contains(".concat(simplified, ")")).slice(-1)[0];
 
       if (element) {
-        element.innerHTML = element.innerHTML.replace(maoCharacacter, realCharacter);
+        element.innerHTML = element.innerHTML.replace(simplified, traditional);
       }
     }
   }, {
     key: "checkForChineseCharactersOnLoad",
     value: function checkForChineseCharactersOnLoad() {
-      if (Duolingo.isLearningChinese() == false) {
+      if (!Duolingo.isLearningChinese()) {
         return;
       }
 
@@ -2662,7 +2665,7 @@ function () {
 }();
 
 exports.Duolingo = Duolingo;
-},{"./characters.js":"6OaI","./characterLookup.js":"CUbO","sizzle":"kOJT"}],"2S08":[function(require,module,exports) {
+},{"./characters.js":"characters.js","./Dictionary":"Dictionary.js","sizzle":"../../node_modules/sizzle/dist/sizzle.js"}],"mutationObserver.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2674,13 +2677,15 @@ var _duolingo = require("./duolingo.js");
 
 var _cache = require("./cache.js");
 
-var _characterLookup = require("./characterLookup.js");
+var _Dictionary = _interopRequireDefault(require("./Dictionary"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var characterLookup = new _characterLookup.CharacterLookup();
+var characterLookup = new _Dictionary.default();
 var mutationObserver = new MutationObserver(function (mutations) {
-  if (_duolingo.Duolingo.isLearningChinese() == false) {
+  if (!_duolingo.Duolingo.isLearningChinese()) {
     return false;
   }
 
@@ -2777,7 +2782,7 @@ var mutationObserver = new MutationObserver(function (mutations) {
   }
 });
 exports.mutationObserver = mutationObserver;
-},{"./duolingo.js":"rAOA","./cache.js":"Lqfu","./characterLookup.js":"CUbO"}],"epB2":[function(require,module,exports) {
+},{"./duolingo.js":"duolingo.js","./cache.js":"cache.js","./Dictionary":"Dictionary.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _cache = require("./cache.js");
@@ -2787,15 +2792,174 @@ var _mutationObserver = require("./mutationObserver.js");
 var _characters = require("./characters.js");
 
 var _duolingo = require("./duolingo.js");
+},{"./cache.js":"cache.js","./mutationObserver.js":"mutationObserver.js","./characters.js":"characters.js","./duolingo.js":"duolingo.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var global = arguments[3];
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
 
-_cache.Cache.updateLocalStorage();
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || function () {});
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
+  };
+  module.bundle.hotData = null;
+}
 
-_duolingo.Duolingo.checkForChineseCharactersOnLoad();
+module.bundle.Module = Module;
+var parent = module.bundle.parent;
 
-_mutationObserver.mutationObserver.observe(document, {
-  childList: true,
-  subtree: true,
-  characterData: true
-});
-},{"./cache.js":"Lqfu","./mutationObserver.js":"2S08","./characters.js":"6OaI","./duolingo.js":"rAOA"}]},{},["epB2"], null)
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = "" || location.hostname;
+  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54877" + '/');
+
+  ws.onmessage = function (event) {
+    var data = JSON.parse(event.data);
+
+    if (data.type === 'update') {
+      console.clear();
+      data.assets.forEach(function (asset) {
+        hmrApply(global.parcelRequire, asset);
+      });
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          hmrAccept(global.parcelRequire, asset.id);
+        }
+      });
+    }
+
+    if (data.type === 'reload') {
+      ws.close();
+
+      ws.onclose = function () {
+        location.reload();
+      };
+    }
+
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+      removeErrorOverlay();
+    }
+
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data);
+      document.body.appendChild(overlay);
+    }
+  };
+}
+
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
+
+  if (overlay) {
+    overlay.remove();
+  }
+}
+
+function createErrorOverlay(data) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
+
+  var message = document.createElement('div');
+  var stackTrace = document.createElement('pre');
+  message.innerText = data.error.message;
+  stackTrace.innerText = data.error.stack;
+  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+  return overlay;
+}
+
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return [];
+  }
+
+  var parents = [];
+  var k, d, dep;
+
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(k);
+      }
+    }
+  }
+
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+
+  return parents;
+}
+
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+
+function hmrAccept(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (!modules[id] && bundle.parent) {
+    return hmrAccept(bundle.parent, id);
+  }
+
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+
+  if (cached) {
+    cached.hot.data = bundle.hotData;
+  }
+
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      cb();
+    });
+
+    return true;
+  }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAccept(global.parcelRequire, id);
+  });
+}
+},{}]},{},["../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
 //# sourceMappingURL=/main.map

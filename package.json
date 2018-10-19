@@ -3,18 +3,24 @@
   "version": "0.6.0",
   "description": "A Google Chrome browser extention for Duolingo that allows users to read Chinese as it written in Taiwan and Hong Kong whilst learning Chinese.",
   "main": "dist/heart.min.js",
+	"ava": {
+		"require": [
+			"esm"
+		]
+	},
   "scripts": {
     "build": "parcel build src/js/main.js --no-minify -d src/build/ -o main.js",
-    "watch": "parcel watch src/js/main.js -d src/build/ -o main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel watch src/js/main.js -d src/build/ -o main.js",
+    "test": "ava"
   },
   "author": "Robin Card",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.7.2",
+    "ava": "1.0.0-rc.1",
     "parcel-bundler": "^1.10.3"
   },
   "dependencies": {
+    "esm": "^3.0.84",
     "sizzle": "^2.3.3"
   }
 }

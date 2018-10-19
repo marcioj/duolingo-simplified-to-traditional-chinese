@@ -1,11 +1,11 @@
 import { Duolingo } from "./duolingo.js";
 import { Cache } from "./cache.js";
-import { CharacterLookup } from "./characterLookup.js";
+import Dictionary from "./Dictionary";
 
-let characterLookup = new CharacterLookup();
+let characterLookup = new Dictionary();
 
 export const mutationObserver = new MutationObserver(function(mutations) {
-  if (Duolingo.isLearningChinese() == false) {
+  if (!Duolingo.isLearningChinese()) {
     return false;
   }
 

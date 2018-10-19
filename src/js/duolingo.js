@@ -1,7 +1,8 @@
 import { characters } from "./characters.js";
-import { CharacterLookup } from "./characterLookup.js";
+import Dictionary from "./Dictionary";
 import Sizzle from "sizzle";
-let characterLookup = new CharacterLookup();
+
+let characterLookup = new Dictionary();
 
 const configuration = {};
 
@@ -32,9 +33,9 @@ chrome.storage.onChanged.addListener(function(changes) {
 export class Duolingo {
   static isLearningChinese() {
     const state = JSON.parse(localStorage.getItem("duo.state"));
-
     return state.user.courseId.match(/ZH\-CN_EN/i) != null;
   }
+
   static insertCharacter(simplified, traditional) {
     let character = traditional;
     setTimeout(function() {
@@ -76,7 +77,7 @@ export class Duolingo {
   }
 
   static checkForChineseCharactersOnLoad() {
-    if (Duolingo.isLearningChinese() == false) {
+    if (!Duolingo.isLearningChinese()) {
       return;
     }
     setTimeout(function() {
